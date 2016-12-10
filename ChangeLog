@@ -1,0 +1,35 @@
+# ChangeLog for app-backup/urbackup-server
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/skel.ChangeLog,v 1.2 2006/02/22 02:08:04 hd_brummy Exp $
+
+  10 Dec 2016; HomerSlated ChangeLog:
+
+
+  commit 9b37770030118c1bbaba84c154282de9c911a06f
+  Author: HomerSlated <github@slated.org>
+  Date: Sat Dec 10 11:02:37 2016 +0000
+
+  Init changelog
+
+  Package-Manager: portage-2.3.0
+
+  commit d214e7136e0601a9621a8670232ad62315e7d93f
+  Merge: 58f3609 ff2dd2b
+  Author: HomerSlated <github@slated.org>
+  Date: Sat Dec 10 10:14:03 2016 +0000
+
+  Merge branch 'master' of https://github.com/HomerSlated/urbackup-gentoo
+
+  commit ff2dd2b116a27ec79be0b0e5623b06052ef09a59
+  Author: Homer <github@slated.org>
+  Date: Sat Dec 10 19:52:24 2016 +0000
+
+  Initial commit
+
+  commit 58f3609d200193e700621981b05c19b965dc2ac2
+  Author: HomerSlated <github@slated.org>
+  Date: Sat Dec 10 10:07:39 2016 +0000
+
+  First commit
+
+
