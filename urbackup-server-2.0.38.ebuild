@@ -24,7 +24,10 @@ DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/${P}-gcc-fortify.patch"
+	"${FILESDIR}/${P}-autoupdate.patch"
+	"${FILESDIR}/${P}-manpage.patch"
 	"${FILESDIR}/${P}-gentoo-prefix.patch"
+	"${FILESDIR}/${P}-autoupdate-ui.patch"
 )
 
 pkg_setup() {
@@ -43,6 +46,5 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-	dodoc docs/urbackupsrv.1
 	fowners -R urbackup:urbackup "${EPREFIX}/var/lib/urbackup"
 }
