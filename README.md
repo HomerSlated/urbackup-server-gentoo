@@ -1,4 +1,4 @@
-# urbackup-gentoo
+# urbackup-server-gentoo
 UrBackup server ebuild for Gentoo
 
 This is only a Gentoo ebuild and patches for UrBackup. It does not include
@@ -8,5 +8,5 @@ author's server at urbackup.org during compilation.
 UrBackup is copyright Phil Lucido and Martin Raiber, published under the
 AGPLv3+. A copy of that license is included with this distribution.
 
-This ebuild and its associated files are copyright Â© 2016 slated.org, also
+This ebuild and its associated files are copyright © 2016 slated.org, also
 published under AGPLv3+, unless otherwise noted.
