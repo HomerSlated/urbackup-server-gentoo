@@ -2,6 +2,20 @@
 # Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/skel.ChangeLog,v 1.2 2006/02/22 02:08:04 hd_brummy Exp $
 
+  14 Dec 2016; HomerSlated urbackup-server-2.0.38.ebuild,
+  -files/urbackup-server-2.0.38-autoupdate.patch,
+  +files/urbackup-server-2.0.38-autoupdate-code.patch,
+  +files/urbackup-server-2.0.38-autoupdate-config.patch,
+  +files/urbackup-server-2.0.38-autoupdate-datafiles.patch,
+  files/urbackup-server-2.0.38-autoupdate-ui.patch,
+  files/urbackup-server-2.0.38-gentoo-prefix.patch,
+  +files/urbackup-server-2.0.38-redundant-binary.patch, TODO,
+  +files/urbackupsrv:
+
+
+  Stable release.
+
+
   12 Dec 2016; HomerSlated urbackup-server-2.0.38.ebuild,
   +files/urbackup-server-2.0.38-autoupdate.patch,
   +files/urbackup-server-2.0.38-autoupdate-ui.patch,

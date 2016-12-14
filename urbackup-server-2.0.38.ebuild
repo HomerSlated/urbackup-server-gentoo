@@ -23,11 +23,14 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/${P}-gcc-fortify.patch"
-	"${FILESDIR}/${P}-autoupdate.patch"
-	"${FILESDIR}/${P}-manpage.patch"
-	"${FILESDIR}/${P}-gentoo-prefix.patch"
+	"${FILESDIR}/${P}-autoupdate-code.patch"
+	"${FILESDIR}/${P}-autoupdate-config.patch"
+	"${FILESDIR}/${P}-autoupdate-datafiles.patch"
 	"${FILESDIR}/${P}-autoupdate-ui.patch"
+	"${FILESDIR}/${P}-gcc-fortify.patch"
+	"${FILESDIR}/${P}-gentoo-prefix.patch"
+	"${FILESDIR}/${P}-manpage.patch"
+	"${FILESDIR}/${P}-redundant-binary.patch"
 )
 
 pkg_setup() {
@@ -41,10 +44,17 @@ src_configure() {
 	$(use_enable gcc-fortify fortify) \
 	$(use_with fuse mountvhd) \
 	$(use_with mail) \
-	$(use_with zlib)
+	$(use_with zlib) \
+	--enable-packaging
 }
 
 src_install() {
+	dodir "${EPREFIX}"/usr/share/man/man1
 	emake DESTDIR="${D}" install
+	insinto "${EPREFIX}"/etc/logrotate.d
+	newins logrotate_urbackupsrv urbackupsrv
+	newconfd defaults_server urbackupsrv
+	doinitd "${FILESDIR}"/urbackupsrv
 	fowners -R urbackup:urbackup "${EPREFIX}/var/lib/urbackup"
+	fowners -R urbackup:urbackup "${EPREFIX}/usr/share/urbackup/www"
 }
