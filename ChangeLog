@@ -3,6 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/skel.ChangeLog,v 1.2 2006/02/22 02:08:04 hd_brummy Exp $
 
   14 Dec 2016; HomerSlated urbackup-server-2.0.38.ebuild,
+  +logs/urbackup-server-2.0.38:20161214-051820.log,
+  -urbackup-server-2.0.38:20161214-051820.log, +COPYING, README.md:
+
+
+  Fixed copyrights
+
+
+  14 Dec 2016; HomerSlated urbackup-server-2.0.38.ebuild,
   -files/urbackup-server-2.0.38-autoupdate.patch,
   +files/urbackup-server-2.0.38-autoupdate-code.patch,
   +files/urbackup-server-2.0.38-autoupdate-config.patch,
