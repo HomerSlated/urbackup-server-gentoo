@@ -1,5 +1,5 @@
---- urbackup-server-2.1.7.0/docs/urbackupsrv.1.orig	2016-12-17 03:50:56.581864619 +0000
-+++ urbackup-server-2.1.7.0/docs/urbackupsrv.1	2016-12-17 03:51:05.239864504 +0000
+--- urbackup-server-2.0.38/docs/urbackupsrv.1.orig	2016-12-13 05:32:15.213882841 +0000
++++ urbackup-server-2.0.38/docs/urbackupsrv.1	2016-12-13 05:34:45.770880842 +0000
 @@ -62,7 +62,10 @@
  .SH FILES
  .br

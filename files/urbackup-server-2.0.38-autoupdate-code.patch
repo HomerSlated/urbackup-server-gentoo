@@ -1,6 +1,6 @@
---- urbackup-server-2.1.7.0/urbackupserver/server_update.cpp.orig	2016-12-17 03:00:24.297904887 +0000
-+++ urbackup-server-2.1.7.0/urbackupserver/server_update.cpp	2016-12-17 02:49:29.966913577 +0000
-@@ -29,7 +29,7 @@
+--- urbackup-server-2.0.38/urbackupserver/server_update.cpp.orig	2016-12-13 14:01:42.053476916 +0000
++++ urbackup-server-2.0.38/urbackupserver/server_update.cpp	2016-12-13 14:08:10.831471753 +0000
+@@ -27,7 +27,7 @@
  
  namespace
  {
@@ -9,7 +9,7 @@
  
  	struct SUpdatePlatform
  	{
-@@ -50,199 +50,20 @@
+@@ -48,148 +48,16 @@
  
  void ServerUpdate::update_client()
  {
@@ -134,11 +134,11 @@
 -	std::string errmsg;
 -	Server->Log("Downloading server version info...", LL_INFO);
 -
--	std::auto_ptr<IFile> server_version_info(Server->openFile("urbackup/server_version_info.properties.new", MODE_WRITE));
+-	std::auto_ptr<IFile> server_version_info(Server->openFile("urbackup/server_version_info.properties", MODE_WRITE));
 -
 -	if(!server_version_info.get())
 -	{
--		Server->Log("Error opening urbackup/server_version_info.properties.new for writing", LL_ERROR);
+-		Server->Log("Error opening urbackup/server_version_info.properties for writing", LL_ERROR);
 -	}
 -	else
 -	{
@@ -147,62 +147,11 @@
 -		{
 -			Server->Log("Error downloading server version information: " + errmsg, LL_ERROR);
 -		}
--		else
--		{
--			server_version_info.reset();
--			if (!os_rename_file("urbackup/server_version_info.properties.new",
--								"urbackup/server_version_info.properties"))
--			{
--				Server->Log("Error renaming server_version_info.properties . " + os_last_error_str(), LL_ERROR);
--			}
--		}
 -	}	
 +	return;
  }
  
- void ServerUpdate::update_dataplan_db()
- {
--	if (url_fak == NULL)
--	{
--		Server->Log("Urlplugin not found. Cannot download dataplan database.", LL_ERROR);
--		return;
--	}
--
--	read_update_location();
--
--	std::string http_proxy = Server->getServerParameter("http_proxy");
--
--	std::string errmsg;
--	Server->Log("Downloading dataplan database...", LL_INFO);
--
--	std::auto_ptr<IFile> dataplan_db(Server->openFile("urbackup/dataplan_db.txt.new", MODE_WRITE));
--	if (!dataplan_db.get())
--	{
--		Server->Log("Error opening urbackup/dataplan_db.txt.new for writing", LL_ERROR);
--	}
--	else
--	{
--		if (!url_fak->downloadFile(urbackup_update_url + "dataplan_db.txt",
--			dataplan_db.get(), http_proxy, &errmsg))
--		{
--			Server->Log("Error downloading dataplan database: " + errmsg, LL_ERROR);
--		}
--		else
--		{
--			dataplan_db.reset();
--			if (!os_rename_file("urbackup/dataplan_db.txt.new",
--				"urbackup/dataplan_db.txt"))
--			{
--				Server->Log("Error renaming urbackup/dataplan_db.txt. " + os_last_error_str(), LL_ERROR);
--			}
--
--			DataplanDb::getInstance()->read("urbackup/dataplan_db.txt");
--		}
--
--	}
-+	return;
- }
- 
++
  void ServerUpdate::read_update_location()
  {
 -	std::string read_update_location = trim(getFile("urbackup/server_update_location.url"));
