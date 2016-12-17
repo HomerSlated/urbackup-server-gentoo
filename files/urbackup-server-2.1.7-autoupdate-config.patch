@@ -1,0 +1,27 @@
+--- urbackup-server-2.1.7.0/urbackupserver/server_settings.cpp.orig	2016-12-17 02:59:12.610905839 +0000
++++ urbackup-server-2.1.7.0/urbackupserver/server_settings.cpp	2016-12-17 02:56:34.214907943 +0000
+@@ -341,12 +341,12 @@
+ 	settings->no_file_backups=(settings_global->getValue("no_file_backups", "false")=="true");
+ 	settings->overwrite=false;
+ 	settings->allow_overwrite=(settings_default->getValue("allow_overwrite", "true")=="true");
+-	settings->backupfolder=trim(settings_global->getValue("backupfolder", "C:\\urbackup"));
++	settings->backupfolder=trim(settings_global->getValue("backupfolder", "/mnt/urbackup"));
+ 	settings->backupfolder_uncompr=trim(settings_global->getValue("backupfolder_uncompr", settings->backupfolder));
+ 	settings->autoshutdown=(settings_global->getValue("autoshutdown", "false")=="true");;
+ 	settings->startup_backup_delay=settings_default->getValue("startup_backup_delay", 0);
+-	settings->download_client=(settings_global->getValue("download_client", "true")=="true");
+-	settings->autoupdate_clients=(settings_global->getValue("autoupdate_clients", "true")=="true");
++	settings->download_client=(settings_global->getValue("download_client", "false")=="true");
++	settings->autoupdate_clients=(settings_global->getValue("autoupdate_clients", "false")=="true");
+ 	settings->backup_window_incr_file=settings_default->getValue("backup_window_incr_file", "1-7/0-24");
+ 	settings->backup_window_full_file=settings_default->getValue("backup_window_full_file", "1-7/0-24");
+ 	settings->backup_window_incr_image=settings_default->getValue("backup_window_incr_image", "1-7/0-24");
+@@ -397,7 +397,7 @@
+ 	settings->internet_calculate_filehashes_on_client=(settings_default->getValue("internet_calculate_filehashes_on_client", "true")=="true");
+ 	settings->use_incremental_symlinks=(settings_global->getValue("use_incremental_symlinks", "true")=="true");
+ 	settings->internet_connect_always=(settings_default->getValue("internet_connect_always", "false")=="true");
+-	settings->show_server_updates=(settings_global->getValue("show_server_updates", "true")=="true");
++	settings->show_server_updates=(settings_global->getValue("show_server_updates", "false")=="true");
+ 	settings->server_url= trim(settings_global->getValue("server_url", ""));
+ 	settings->verify_using_client_hashes=(settings_default->getValue("verify_using_client_hashes", "false")=="true");
+ 	settings->internet_readd_file_entries=(settings_default->getValue("internet_readd_file_entries", "true")=="true");

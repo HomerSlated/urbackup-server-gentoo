@@ -1,0 +1,14 @@
+--- urbackup-server-2.1.7.0/docs/urbackupsrv.1.orig	2016-12-17 03:50:56.581864619 +0000
++++ urbackup-server-2.1.7.0/docs/urbackupsrv.1	2016-12-17 03:51:05.239864504 +0000
+@@ -62,7 +62,10 @@
+ .SH FILES
+ .br
+ .nf
+-\fI/var/urbackup/	Database and web interface files location
++\fI/var/lib/urbackup/\fP					Database files location
++\fI/etc/conf.d/urbackup-server.conf\fP		Server configuration file
++\fI/usr/share/urbackup/scripts\fP			Helper scripts
++\fI/usr/share/urbackup/www/\fP				Web interface files location
+ 
+ .SH CEVEATS
+ UrBackup server starts as user "urbackup" per default and as such has limited rights.

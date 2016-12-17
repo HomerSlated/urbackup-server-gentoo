@@ -1,0 +1,11 @@
+--- urbackup-server-2.1.7.0/Makefile.in.orig	2016-12-14 16:10:48.000000000 +0000
++++ urbackup-server-2.1.7.0/Makefile.in	2016-12-17 03:07:17.787899396 +0000
+@@ -1131,7 +1131,7 @@
+ 	fileservplugin/FileMetadataPipe.cpp \
+ 	fileservplugin/PipeFileTar.cpp $(am__append_1) $(am__append_2) \
+ 	$(am__append_3) $(am__append_4)
+-@WITH_FORTIFY_TRUE@FORTIFY_FLAGS = -fstack-protector-strong --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIE
++@WITH_FORTIFY_TRUE@FORTIFY_FLAGS = -fstack-protector-strong --param=ssp-buffer-size=4 -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fPIE
+ @WITH_FORTIFY_TRUE@FORTIFY_ldflags = -Wl,-z,relro
+ urbackupsrv_LDADD = $(LIBCURL) $(PTHREAD_LIBS) $(DLOPEN_LIBS) \
+ 	$(FUSE_LIBS) $(am__append_5)
